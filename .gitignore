@@ -32,6 +32,13 @@ public/sitemap.xml
 # misc
 .DS_Store
 
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln
+*.slnx
+
 # debug
 *.log
 npm-debug.log*
