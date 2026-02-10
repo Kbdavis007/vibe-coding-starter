@@ -59,9 +59,6 @@ module.exports = () => {
   return plugins.reduce((acc, next) => next(acc), {
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-    eslint: {
-      dirs: ['app', 'components', 'layouts', 'scripts'],
-    },
     images: {
       remotePatterns: [
         {
@@ -92,6 +89,11 @@ module.exports = () => {
         },
       ];
     },
+    // Turbopack configuration (Next.js 16+)
+    turbopack: {
+      // Empty config to silence the error, SVG handling works by default
+    },
+    // Webpack configuration (fallback for --webpack flag)
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.svg$/,
